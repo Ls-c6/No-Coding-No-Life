@@ -30,7 +30,7 @@ int main()
 {
     while (scanf("%d%d%d",&l,&r,&c)!=EOF)
     {
-        if (!l &&!r && !c) break;
+        if (!l && !r && !c) break;
         M.assign(l,vector<vector<char>>(r,vector<char>(c)));
         for (int i=0;i<l;i++)
         {
