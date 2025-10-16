@@ -17,7 +17,7 @@ void bfs(int now)
         for (int i=0;i<8;i++)
         {
             int cx=x+dx[i],cy=y+dy[i];
-            if (cx>=0 && cx<m && cy>=0 && cy<n && Map[cx][cy]=='@') if (vis[cx][cy]-->0) q.push(cx*n+cy);
+            if (cx>=0 && cx<m && cy>=0 && cy<n && Map[cx][cy]=='@' && vis[cx][cy]-->0) q.push(cx*n+cy);
         }
     }
     return;
