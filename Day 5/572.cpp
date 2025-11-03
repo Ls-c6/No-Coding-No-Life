@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <vector>
 #include <queue>
-#include <algorithm>
 using namespace std;
 int m,n,dx[]={-1,-1,0,1,1,1,0,-1},dy[]={0,1,1,1,0,-1,-1,-1};
 vector<vector<int>> vis;
@@ -18,7 +17,7 @@ void bfs(int now)
         for (int i=0;i<8;i++)
         {
             int cx=x+dx[i],cy=y+dy[i];
-            if (cx>=0 && cx<m && cy>=0 && cy<n && Map[cx][cy]=='@') if (vis[cx][cy]-->0) q.push(cx*n+cy);
+            if (cx>=0 && cx<m && cy>=0 && cy<n && Map[cx][cy]=='@' && vis[cx][cy]-->0) q.push(cx*n+cy);
         }
     }
     return;
@@ -38,15 +37,12 @@ int main()
             scanf("%s",c);
             for (int j=0;j<n;j++) Map[i][j]=c[j];
         }
-        for (int i=0;i<m;i++)
+        for (int i=0;i<m;i++)  for (int j=0;j<n;j++)
         {
-            for (int j=0;j<n;j++)
+            if (Map[i][j]=='@' && vis[i][j]-->0)
             {
-                if (Map[i][j]=='@') if (vis[i][j]-->0)
-                {
-                    sum++;
-                    bfs(i*n+j);
-                }
+                sum++;
+                bfs(i*n+j);
             }
         }
         printf("%d\n",sum);
