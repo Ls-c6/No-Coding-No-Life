@@ -4,7 +4,7 @@
 #include <stdio.h>
 #include <algorithm>
 using namespace std;
-int n,m,st,ed,flag=1,dx[]={-1,0,1,0},dy[]={0,1,0,-1};
+int n,m,st,ed,flag,dx[]={-1,0,1,0},dy[]={0,1,0,-1};
 char to[]={'U','R','D','L'};
 vector<int> mon;
 vector<vector<int>> vis,t_1,t_2;
